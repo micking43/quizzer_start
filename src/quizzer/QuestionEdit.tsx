@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button, Form } from "react-bootstrap";
 import { Question, QuestionType } from "../interfaces/question";
 
 import "./QuestionEdit.css";
@@ -17,8 +18,8 @@ export const QuestionEdit = ({
 
     const handleNumOptions = (e: React.ChangeEvent<HTMLInputElement>) => {
         b(0);
-        const newNum =1;
-        parseInt(e.target.value) < 1 ? 1 : parseInt(e.target.value);
+        const newNum =
+            parseInt(e.target.value) < 1 ? 1 : parseInt(e.target.value);
         editQuestion(question.id, {
             ...question,
             type: "multiple_choice_question",
@@ -111,7 +112,7 @@ export const QuestionEdit = ({
                                 <Form.Select
                                     className="type_dropdown"
                                     value={question.type}
-                                    onChange={handleSwitch}
+                                    onChange={switchMulti}
                                 >
                                     <option
                                         data-testid={

@@ -19,6 +19,7 @@ export const QuizEdit = ({
         setNewQuiz({
             ...newQuiz,
             questionList: newQuiz.questionList.map(
+                (questions: Question): Question => questions.id === questionId ? {...newQuestion} : questions
             )
         });
     };

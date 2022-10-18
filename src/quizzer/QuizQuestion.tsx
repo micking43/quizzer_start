@@ -53,7 +53,7 @@ export const QuizQuestion = ({
                             {question.options.map(
                                 (option: string, i: number) => (
                                     <Form.Check
-                                        type=""
+                                        type= "checkbox"
                                         name={"questionChoice" + index}
                                         key={option + " | " + i}
                                         label={option}
