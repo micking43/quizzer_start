@@ -53,6 +53,7 @@ export const QuizExpanded = ({
         editQuiz(quiz.id, {
             ...quiz,
             questionList: quiz.questionList.map(
+                (question: Question): Question => question.id === questionId ? {...question, submission: sub} : question
             )
         });
     };
