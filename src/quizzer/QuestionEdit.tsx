@@ -10,15 +10,15 @@ export const QuestionEdit = ({
     editQuestion,
     removeQuestion,
     swapQuestion
-}: {}) => {
+}: {index: number, lastIndex: number, question: Question, editQuestion: (id: number, question: Question) => void, removeQuestion: (id: number) => void, swapQuestion: (index: number, oneLess: number) => void}) => {
     const [a, b] = useState<number>(
         question.options.findIndex((s: string) => question.expected === s)
     );
 
     const handleNumOptions = (e: React.ChangeEvent<HTMLInputElement>) => {
         b(0);
-        const newNum =
-            parseInt(e.target.value) < 1 ? 1 : parseInt(e.target.value);
+        const newNum =1;
+        parseInt(e.target.value) < 1 ? 1 : parseInt(e.target.value);
         editQuestion(question.id, {
             ...question,
             type: "multiple_choice_question",
