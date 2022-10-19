@@ -34,13 +34,13 @@ export const QuizEdit = ({
         setNewQuiz({
             ...newQuiz,
             questionList: newQuiz.questionList.filter(
-                (questions: Question): boolean => !(questions.id === questionId)
+                (questions: Question): boolean => questions.id !== questionId
             )
         });
     };
 
     const saveChanges = () => {
-        editQuiz(quiz.id, { ...newQuiz });
+        editQuiz(newQuiz.id, { ...newQuiz });
     };
 
     const swapQuestion = (idx1: number, idx2: number) => {

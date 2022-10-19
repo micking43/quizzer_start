@@ -15,13 +15,13 @@ export const QuestionEdit = ({
     index: number;
     lastIndex: number;
     question: Question;
-    editQuestion: (id: number, question: Question) => void;
+    editQuestion: (id: number, newQuestion: Question) => void;
     removeQuestion: (id: number) => void;
     swapQuestion: (index: number, oneLess: number) => void;
 }) => {
     const [a, b] = useState<number>(
         question.options.findIndex((s: string) => question.expected === s)
-    )
+    );
 
     const handleNumOptions = (e: React.ChangeEvent<HTMLInputElement>) => {
         b(0);
