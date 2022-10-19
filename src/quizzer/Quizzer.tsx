@@ -26,7 +26,7 @@ export const Quizzer = () => {
 
     function editQuiz(qId: number, newQuiz: Quiz) {
         setQuizzes(
-            quizzes.map((q: Quiz): Quiz => (q.id === qId ? newQuiz : q))
+            quizzes.map((q: Quiz): Quiz => (q.id === qId ? {...newQuiz} : q))
         );
     }
 
