@@ -11,10 +11,17 @@ export const QuestionEdit = ({
     editQuestion,
     removeQuestion,
     swapQuestion
-}: {index: number, lastIndex: number, question: Question, editQuestion: (id: number, question: Question) => void, removeQuestion: (id: number) => void, swapQuestion: (index: number, oneLess: number) => void}) => {
+}: {
+    index: number;
+    lastIndex: number;
+    question: Question;
+    editQuestion: (id: number, question: Question) => void;
+    removeQuestion: (id: number) => void;
+    swapQuestion: (index: number, oneLess: number) => void;
+}) => {
     const [a, b] = useState<number>(
         question.options.findIndex((s: string) => question.expected === s)
-    );
+    )
 
     const handleNumOptions = (e: React.ChangeEvent<HTMLInputElement>) => {
         b(0);

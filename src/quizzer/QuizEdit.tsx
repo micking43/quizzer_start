@@ -12,7 +12,13 @@ export const QuizEdit = ({
     deleteQuiz,
     switchEdit,
     resetView
-}: {quiz: Quiz, editQuiz: (id: number, newQuiz: Quiz) => void, deleteQuiz: (id: number) => void, switchEdit: () => void, resetView: () => void}) => {
+}: {
+    quiz: Quiz;
+    editQuiz: (id: number, newQuiz: Quiz) => void; 
+    deleteQuiz: (id: number) => void; 
+    switchEdit: () => void; 
+    resetView: () => void;
+}) => {
     const [newQuiz, setNewQuiz] = useState<Quiz>({ ...quiz });
 
     const editQuestion = (questionId: number, newQuestion: Question) => {

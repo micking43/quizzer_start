@@ -5,7 +5,10 @@ export const AddQuizModal = ({
     show,
     handleClose,
     addQuiz
-}: {show: boolean, handleClose: () => void, addQuiz: (title: string, body: string) => void
+}: {
+    show: boolean;
+    handleClose: () => void;
+    addQuiz: (title: string, body: string) => void;
 }) => {
     const [title, setTitle] = useState<string>("Example Quiz");
     const [body, setBody] = useState<string>("Example Description");
@@ -15,8 +18,7 @@ export const AddQuizModal = ({
         setTitle("Example Quiz");
         setBody("Example Description");
         handleClose();
-    };
-
+    }
     return (
         <div>
             <Modal show={show} onHide={handleClose} animation={false}>
